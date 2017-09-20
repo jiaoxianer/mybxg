@@ -4,7 +4,7 @@
 	header('Content-Type:text/html;charset=utf-8');
 	//echo '<div>主页内容</div>';
 	//include 在当前PHP页面内部嵌入一个子页面
-	//必粗通过URL区分出用户想访问的哪个页面
+	//必需通过URL区分出用户想访问的哪个页面
 	//include('./views/main/index.html');
 
 	//$_SERVER PHP中的全局变量，是一个数组 在访问的时候在后面加东西会多出来一个属性PATH_INFO
@@ -26,7 +26,7 @@
 		// 去掉第一个斜杠
 		$str = substr($path,1);
 		//字符串分割，explode和js中的split方法很像
-		$ret = explode('/', $str);//返回数字类型
+		$ret = explode('/', $str);//返回数组，有长度
 		if(count($ret) == 2){
 			$dir = $ret[0];// 覆盖目录
       		$filename = $ret[1]; // 覆盖文件名称
