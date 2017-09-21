@@ -1,6 +1,7 @@
 define(['jquery','cookie'],function($){
 	//登录功能
 	 $('#loginBtn').click(function(){
+        //ajax不能跨域，所以后台要做发你选反向代理 url
             $.ajax({
                 type: 'post',
                 url: '/api/login',
