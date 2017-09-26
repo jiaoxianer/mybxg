@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>学IT - 后台管理系统</title>
     <?php include('./views/common/style.html'); ?>
-    
+    <link rel="stylesheet" type="text/css" href="/public/assets/jcrop/css/Jcrop.css">
 </head>
 <body>
     
@@ -18,8 +18,13 @@
             <div class="body course-add" id="pictureInfo">
                 <!-- 挖个大坑 -->
             </div>
-        </div>
-        
+        </div> 
+        <form id="cropForm" style="display: none;"> 
+            <input type="text" name="x">
+            <input type="text" name="y">
+            <input type="text" name="w">
+            <input type="text" name="h">
+        </form>
     </div>
     <script type="text/template" id='pictureTpl'>
         <ol class="breadcrumb">

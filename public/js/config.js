@@ -13,6 +13,7 @@ require.config({
     uploadify : 'uploadify/jquery.uploadify.min',
     region : 'jquery-region/jquery.region',
     ckeditor : 'ckeditor/ckeditor',
+    jcrop : 'jcrop/js/Jcrop',
     util : '../js/util',
     common : '../js/common',
     login : '../js/login',
@@ -40,6 +41,9 @@ require.config({
   	},
   	ckeditor : {
   		exports : 'CKEDITOR'//1、不依赖jQuery2、不是标准模块3、需要导出成员CKEDITOR
-  	}
+  	},
+    jcrop :{
+      deps :['jquery']
+    }
   }
 });
