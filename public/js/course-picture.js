@@ -15,8 +15,9 @@ define(['jquery','template','util','uploadify','jcrop','form'],function($,templa
 			$('#pictureInfo').html(html);
 
 			//选中裁切的图片
-      		var img = $('.preview img').eq(0);
-      		var nowCrop = null;
+      var img = $('.preview img').eq(0);
+      //为了保证页面中只有一个裁切实例
+      var nowCrop = null;
 
 			//处理封面上传
 			$('#myfile').uploadify({
@@ -31,7 +32,10 @@ define(['jquery','template','util','uploadify','jcrop','form'],function($,templa
        			formData : {cs_id : csId},
        			onUploadSuccess : function(a,b,c){
        				var obj = JSON.parse(b.trim());
-       			  	$('.preview img').attr('src',obj.result.path);
+       			  $('.preview img').attr('src',obj.result.path);
+              //上传成功之后直接选中选区
+              cropImage();
+              $('#cropBtn').text('保存图片').attr('data-flag',true);
     			}
       		});
       		//处理封面裁切
